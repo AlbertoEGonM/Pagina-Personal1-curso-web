@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <form action="/procesar formulario" method="post">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="inombre" required>
+                <label for="ApPat">Ap Paterno:</label>
+                <input type="text" id="ApPat" name="iApPat" required>
+                <label for="ApMat">Ap Materno:</label>
+                <input type="text" id="ApMat" name="iApMat" required>
+            </div>
+            <div>
+                <label for="fnac">Fecha de nacimiento:</label>
+                <input type="date" id="fnac" name="ifNac">
+                <label for="RFC">RFC:</label>
+                <input type="text" id="RFC" name="irfc" required>
+            </div>
+            <label for="signo">Signo Zodiacal</label>
+            <select name="signos" id="signo">Signo Zodiacal:
+                <option value="blanco"> </option>
+                <option value="Capricornio">Capricornio</option>
+                <option value="Aries">Aries</option>
+                <option value="Tauro">Tauro</option>
+                <option value="Geminis">Geminis</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Escorpio">Escorpio</option>
+                <option value="Sagitario">Sagitario</option>
+                <option value="Acuario">Acuario</option>
+                <option value="Piscis">Piscis</option>
+            </select>
+            <legend>Genero</legend>
+            <label for="generoM">Masculino</label>
+            <input type="radio" id="generoM" name="masculino">
+            <label for="generoF">Femenino</label>
+            <input type="radio" name="generoF" id="femenino">
+            <legend>Direccion</legend>
+            <div>
+                <label for="calle">Calle</label>
+                <input type="text" id="calle" name="callle1">
+                <label for="colonia">Colonia</label>
+                <input type="text" id="colonia" name="col">
+                <label for="estado">Estado</label>
+                <select name="estados" id="estado">Estados
+                    <option value="blanco"></option>
+                    <option value="cdmx">Ciudad de Mexico</option>
+                    <option value="edomex">Estado de Mexico</option>
+                </select>    
+            </div>
+            <div>
+                <label for="num">Numero exterior</label>
+                <input type="text" id="num" name="numE">
+                <label for="numint">Numero interior</label>
+                <input type="text" id="numint" name="numI">
+            </div>
+            <div>
+                <label for="correo">Correo Electronico</label>
+                <input type="text" inert="correo" name="correoel">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Escolares</legend>
+            <label for="escuela">Escuela Actual</label>
+            <select name="escu" id="escuela">
+                <option value="blanco"></option>
+                <option value="Escom">ESCOM</option>
+                <option value="Esime">ESIME</option>
+                <option value="Esia">ESIA</option>
+            </select>
+            <div>
+            <label for="semestre">Semestre</label>
+            <select name="semestre" id="semestre">
+                <option value="blanco"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+            </div>
+            <div>
+            <label for="ingreso">Año de Ingreso</label>
+            <select name="ingresp" id="ingreso">
+                <option value="blanco"></option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            </div>
+            <div>
+                <label for="Promedio">Promedio</label>
+                <input type="text" id="Promedio" name="promedio">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Otros Datos</legend>
+            <div>
+                <legend>Pasatiempos</legend>
+                <label for="leer">Leer</label>
+                <input type="checkbox">
+                <label for="cine">Cine</label>
+                <input type="checkbox">
+                <label for="ejercicio">Ejercicio</label>
+                <input type="checkbox">
+                <label for="videojuegos">Videojuegos</label>
+                <input type="checkbox">
+                <label for="cantar">Cantar</label>
+                <input type="checkbox">
+                <label for="cocinar">Cocinar</label>
+                <input type="checkbox">
+                <label for="otrr">Otro</label>
+                <input type="checkbox">
+            </div>
+            <div>
+                <legend>Lenguaje de Programacion Favorito</legend>
+                <label for="lenguaje">Lenguajes</label>
+                <select name="leng" id="lenguaje">
+                    <option value="blanco"></option>
+                    <option value="C">C</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                    <option value="C++">C++</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                </select>
+            </div>
+            <div>
+                <legend>Estado de Animo</legend>
+                
+                <input type="range" id="felicidad" name="felicidad" min="0" max="100" value="50">
+                <div class="rating-label label-min">Nada Feliz</div>
+                <div class="rating-label label-max">Muy Feliz</div>
+            </div>
+        </fieldset>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+    </form>
+</body>
+</html>
