@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4CM2 Tecnologías Web - Ejercicios JS</title>
+</head>
+<body>
+
+    <h1>4CM2 Tecnologías Web</h1>
+
+    
+    <div class="seccion">
+        <h2>Arreglos Ordenados (Método de Fusión sin `sort()`)</h2>
+        <br>
+        <p>Arreglos de entrada: [1, 3, 5, 7] y [2, 4, 6, 8]</p>
+        <button onclick="UnirArreglos()">Unir y Ordenar</button>
+    </div>
+
+    <br><br>
+    
+    <div class="seccion">
+        <h2>Arreglo de Cadenas</h2>
+        <br>
+        <p>Arreglo de entrada: ["manzana", "banana", "pera", "manzana", "uva"]</p>
+        <button onclick="IndicarDuplicadas()">Indicar Duplicadas</button>
+        <button onclick="BuscarCadena()">Buscar Cadena (con prompt)</button>
+        <button onclick="ReemplazarCadena()">Reemplazar Cadena (con prompt)</button>
+        <button onclick="InvertirCadenas()">Invertir Orden</button>
+    </div>
+
+    <br><br>
+    
+    <div class="seccion">
+        <h2>Matriz Numérica de 4x4</h2>
+        <style>
+            table, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
+        <p>Matriz A:</p>
+        <table>
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+            <tr><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+            <tr><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+        </table>
+        <p>Matriz B:</p>
+        <table>
+            <tr><td>16</td><td>15</td><td>14</td><td>13</td></tr>
+            <tr><td>12</td><td>11</td><td>10</td><td>9</td></tr>
+            <tr><td>8</td><td>7</td><td>6</td><td>5</td></tr>
+            <tr><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+        </table>
+        <br>
+        <button onclick="ObtenerDiagonal()">Obtener Diagonal</button>
+        <button onclick="SumarFilas()">Obtener Suma de Filas</button>
+        <button onclick="SumarColumnas()">Obtener Suma de Columnas</button>
+        <button onclick="SumarMatrices()">Suma de Dos Matrices</button>
+        <button onclick="MultiplicarMatrices()">Multiplicación de Dos Matrices</button>
+    </div>
+    <script>
+        function UnirArreglos() {
+            const arr1 = [1, 3, 5, 7];
+            const arr2 = [2, 4, 6, 8];
+            const merged = [];
+            let i = 0, j = 0;
+
+            while (i < arr1.length && j < arr2.length) {
+                if (arr1[i] < arr2[j]) {
+                    merged.push(arr1[i]); //push agrega un elemento al final del arreglo
+                    i++;
+                } else {
+                    merged.push(arr2[j]);
+                    j++;
+                }
+            }
+
+            while (i < arr1.length) { //Si quedan elementos en arr1 (porque i es menor que su longitud), se copian todos directamente a merged. Como arr1 ya estaba ordenado, estos elementos simplemente se añaden al final.
+                merged.push(arr1[i]);
+                i++;
+            }
+
+            while (j < arr2.length) {
+                merged.push(arr2[j]);
+                j++;
+            }
+
+            alert(`Arreglo combinado y ordenado: [${merged.join(', ')}]`);
+        }
+        function IndicarDuplicadas() {
+            const frutas = ["manzana", "banana", "pera", "manzana", "uva"];
+            const vistas = {};
+            const duplicadas = new Set(); // Usamos un Set para evitar duplicados en la lista de duplicadas
+
+            for (const fruta of frutas) {
+                if (vistas[fruta]) {
+                    duplicadas.add(fruta); //add agrega un elemento al Set
+                } else {
+                    vistas[fruta] = true;
+                }
+            }
+
+            if (duplicadas.size > 0) {
+                alert(`Frutas duplicadas: ${Array.from(duplicadas).join(', ')}`);
+            } else {
+                alert("No hay frutas duplicadas.");
+            }
+        }
+        function BuscarCadena() {
+            const frutas = ["manzana", "banana", "pera", "manzana", "uva"];
+            const busqueda = prompt("Ingresa la fruta a buscar:");
+            if (busqueda === null) {
+                alert("Búsqueda cancelada.");
+                return;
+            }
+            const indice = frutas.indexOf(busqueda); //indexOf devuelve el índice de la primera aparición del elemento en el arreglo o -1 si no se encuentra
+            if (indice !== -1) {
+                alert(`La fruta "${busqueda}" se encuentra en el índice ${indice}.`);
+            } else {
+                alert(`La fruta "${busqueda}" no se encontró en el arreglo.`);
+            }
+        }
+        function ReemplazarCadena() {
+            const frutas = ["manzana", "banana", "pera", "manzana", "uva"];
+            const aReemplazar = prompt("Ingresa la fruta a reemplazar:");
+            if (aReemplazar === null) {
+                alert("Reemplazo cancelado.");
+                return;
+            }
+            const nuevoValor = prompt("Ingresa la nueva fruta:");
+            if (nuevoValor === null) {
+                alert("Reemplazo cancelado.");
+                return;
+            }
+            let encontrado = 0; //Usamos una variable para rastrear si se encontró la fruta a reemplazar
+            for (let i = 0; i < frutas.length; i++) { //Iteramos sobre el arreglo para encontrar todas las apariciones de la fruta a reemplazar
+                if (frutas[i] === aReemplazar) { //Reemplazamos todas las apariciones
+                    frutas[i] = nuevoValor; //Reemplaza el valor en la posición i
+                    encontrado = 1;
+                }
+            }
+            if (encontrado) {
+                alert(`Arreglo actualizado: [${frutas.join(', ')}]`);
+            } else {
+                alert(`La fruta "${aReemplazar}" no se encontró en el arreglo.`);
+            }
+        }
+        function InvertirCadenas() {
+            const frutas = ["manzana", "banana", "pera", "manzana", "uva"];
+            const invertido = frutas.slice().reverse(); //slice() crea una copia del arreglo original para no modificarlo directamente y luego reverse() invierte el orden de los elementos en esa copia
+            alert(`Arreglo invertido: [${invertido.join(', ')}]`);
+        }
+
+        function ObtenerDiagonal() {
+            const matriz = [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]
+            ];
+            const diagonal = [];
+            for (let i = 0; i < 4; i++) {
+                diagonal.push(matriz[i][i]); //Accede a los elementos donde el índice de fila y columna son iguales
+            }
+            alert(`Diagonal principal Matriz A: [${diagonal.join(', ')}]`);
+        }
+
+        function SumarFilas() {
+            const matriz = [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]
+            ];
+            const sumas = [];
+            for (let i = 0; i < 4; i++) { //Itera sobre cada fila
+                let sumaFila = 0; //Inicializa la suma de la fila actual
+                for (let j = 0; j < 4; j++) {
+                    sumaFila += matriz[i][j]; //Suma cada elemento de la fila
+                }
+                sumas.push(sumaFila); //Agrega la suma de la fila al arreglo de sumas
+            }
+            alert(`Suma de filas Matriz A: [${sumas.join(', ')}]`);
+        }
+
+        function SumarColumnas() {
+            const matriz = [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]
+            ];
+            const sumas = [];
+            for (let j = 0; j < 4; j++) { //Itera sobre cada columna
+                let sumaColumna = 0; //Inicializa la suma de la columna actual
+                for (let i = 0; i < 4; i++) {
+                    sumaColumna += matriz[i][j]; //Suma cada elemento de la columna
+                }
+                sumas.push(sumaColumna); //Agrega la suma de la columna al arreglo de sumas
+            }
+            alert(`Suma de columnas Matriz A: [${sumas.join(', ')}]`);
+        }
+
+        function SumarMatrices() {
+            const matrizA = [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]
+            ];
+            const matrizB = [
+                [16, 15, 14, 13],
+                [12, 11, 10, 9],
+                [8, 7, 6, 5],
+                [4, 3, 2, 1]
+            ];
+            const resultado = [];
+            for (let i = 0; i < 4; i++) {
+                resultado[i] = []; //Inicializa una nueva fila en la matriz resultado
+                for (let j = 0; j < 4; j++) {
+                    resultado[i][j] = matrizA[i][j] + matrizB[i][j]; //Suma los elementos correspondientes de ambas matrices
+                }
+            }
+            let resultadoStr = "Matriz resultante:\n";
+            for (let i = 0; i < 4; i++) {
+                resultadoStr += `[${resultado[i].join(', ')}]\n`;
+            }
+            alert(resultadoStr);
+        }        
+
+        function MultiplicarMatrices() {
+            const matrizA = [
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10, 11, 12],
+                [13, 14, 15, 16]
+            ];
+            const matrizB = [
+                [16, 15, 14, 13],
+                [12, 11, 10, 9],
+                [8, 7, 6, 5],
+                [4, 3, 2, 1]
+            ];
+            const resultado = [];//Matriz resultado de la multiplicación
+            for (let i = 0; i < 4; i++) {
+                resultado[i] = []; //Inicializa una nueva fila en la matriz resultado
+                for (let j = 0; j < 4; j++) {
+                    resultado[i][j] = 0; //Inicializa el elemento en la posición (i,j)
+                    for (let k = 0; k < 4; k++) {
+                        resultado[i][j] += matrizA[i][k] * matrizB[k][j]; //Multiplica y suma los productos
+                    }
+                }
+            }
+            let resultadoStr = "Matriz resultante:\n";
+            for (let i = 0; i < 4; i++) {
+                resultadoStr += `[${resultado[i].join(', ')}]\n`;
+            }
+            alert(resultadoStr);
+        }
+    </script>
+    </body>
+</html>

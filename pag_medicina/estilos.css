@@ -7,7 +7,8 @@ body {
 
 /* ----- Encabezado ----- */
 .encabezado {
-    background-image: url("medicina_tradicional.jpeg");
+    /* Asegúrate de tener la imagen 'medicina_tradicional.jpeg' */
+    background-image: url("medicina_tradicional.jpeg"); 
     color: white;
     padding: 20px;
     text-align: center;
@@ -41,49 +42,48 @@ body {
 .medicina-tradicional-section {
     max-width: 900px;
     margin: 40px auto;
-    background-color: #f0f0f0; /* Fondo gris claro, similar al del diseño */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
+    background-color: #f0f0f0; 
+    border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     
-    /* Configuración de Flexbox para colocar la imagen y el texto lado a lado */
     display: flex;
-    overflow: hidden; /* Importante para que la imagen se vea bien dentro del contenedor */
+    overflow: hidden;
 }
 
 /* Sección de la Imagen */
 .image-container {
-    flex: 2; /* Le da más espacio a la imagen (por ejemplo, 60% del ancho) */
+    flex: 2; 
     position: relative;
-    max-width: 60%; /* Establecer un ancho máximo para la imagen */
+    max-width: 60%; 
 }
 
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    object-fit: cover; 
     display: block;
 }
 
 /* Sección del Texto y Controles */
 .text-content {
-    flex: 1; /* Le da menos espacio al texto (por ejemplo, 40% del ancho) */
+    flex: 1; 
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
+    justify-content: center; 
 }
 
 .title {
-    font-family: 'Playfair Display', serif; /* Usar una fuente elegante similar */
+    font-family: 'Playfair Display', serif; 
     font-size: 2.2em;
-    color: #4a545c; /* Color de texto oscuro, similar al ejemplo */
+    color: #4a545c; 
     margin-top: 0;
     margin-bottom: 5px;
 }
 
 .subtitle {
     font-size: 1.1em;
-    color: #cc4d4d; /* Color rojo o salmón para el subtítulo */
+    color: #cc4d4d; 
     line-height: 1.4;
     margin-bottom: 25px;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .arrow-button {
-    background-color: #6da2bf; /* Color azul, similar al ejemplo */
+    background-color: #6da2bf; 
     color: white;
     border: none;
     border-radius: 50%;
@@ -124,7 +124,7 @@ body {
     margin: 0 auto;
     padding: 40px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto de "tarjeta" si es necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
@@ -136,43 +136,41 @@ h1 {
 /* Contenedor principal para la imagen y el texto (usando Flexbox) */
 .info-card {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    flex-wrap: wrap; 
     gap: 30px;
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    align-items: flex-start; 
 }
 
 /* Sección de la Imagen */
 .image-section {
     flex: 1;
-    min-width: 300px; /* Ancho mínimo para la imagen */
+    min-width: 300px; 
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 10px; /* Pequeño ajuste visual */
+    padding-top: 10px; 
 }
 
 .image-grid {
     width: 250px;
     height: 250px;
     display: grid;
-    /* Grid de 3x2 para acomodar las 6 "imágenes" */
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(2, 1fr);
-    /* El borde redondeado y el overflow hidden dan la forma circular */
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el círculo */
-    transform: rotate(10deg); /* Ligeramente rotado, como en el ejemplo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transform: rotate(10deg); 
 }
 
-/* Estilos de las "Imágenes" individuales (reemplaza con tus propias URLs si las tienes) */
+/* Estilos de las "Imágenes" individuales */
 .image-item {
     background-size: cover;
     background-position: center;
-    /* Asegúrate de que las imágenes se llenen completamente en su área */
 }
 
 /* Colores o imágenes de fondo para simular la composición del collage */
+/* Asegúrate de tener las imágenes '1.jpg', '2.webp', etc. */
 .img-1 { background-color: #ffe0b2; background-image: url('1.jpg'); }
 .img-2 { background-color: #c8e6c9; background-image: url('2.webp'); }
 .img-3 { background-color: #b3e5fc; background-image: url('3.png'); }
@@ -183,13 +181,13 @@ h1 {
 
 /* Sección de Texto */
 .text-section {
-    flex: 2; /* Ocupa más espacio que la imagen */
-    min-width: 350px; /* Ancho mínimo para el texto */
+    flex: 2; 
+    min-width: 350px; 
     padding: 10px 0;
 }
 
 .text-section h2 {
-    color: #e57373; /* Color de pregunta, similar al ejemplo */
+    color: #e57373; 
     font-size: 1.5em;
     margin-top: 0;
 }
@@ -203,7 +201,7 @@ h1 {
 .more-info-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #e53935; /* Color rojo fuerte */
+    background-color: #e53935; 
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -212,7 +210,7 @@ h1 {
 }
 
 .more-info-button:hover {
-    background-color: #c62828; /* Rojo más oscuro al pasar el ratón */
+    background-color: #c62828; 
 }
 
 .contenedor {
@@ -234,9 +232,7 @@ h1 {
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    /* Dos columnas de igual tamaño */
     grid-template-columns: 1fr 1fr; 
-    /* Espacio entre los módulos */
     gap: 40px; 
 }
 
@@ -245,15 +241,14 @@ h1 {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    /* Sombra sutil para destacar el módulo */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 }
 
 /* Título de cada módulo */
 .module-title {
-    font-family: Georgia, serif; /* Usamos una fuente con serifa para un estilo elegante como en el ejemplo */
+    font-family: Georgia, serif; 
     font-size: 1.8em;
-    color: #4a545c; /* Color de texto oscuro */
+    color: #4a545c; 
     margin-top: 0;
     margin-bottom: 25px;
 }
@@ -262,15 +257,14 @@ h1 {
 .module-content {
     display: flex;
     gap: 20px;
-    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+    align-items: flex-start; 
 }
 
 /* Contenedor de la imagen */
 .image-box {
-    /* Darle un tamaño fijo a la caja de la imagen, similar al ejemplo */
     width: 100px; 
     height: 100px;
-    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    flex-shrink: 0; 
     border-radius: 8px;
     overflow: hidden;
 }
@@ -278,7 +272,7 @@ h1 {
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que la imagen se vea completa */
+    object-fit: contain; 
     display: block;
 }
 
@@ -289,8 +283,7 @@ h1 {
     color: rgb(83, 83, 221);
 }
 
-/* Estilos de color de fondo para la sección de la imagen
-   (Opcional, si las imágenes tienen un fondo de color) */
+/* Estilos de color de fondo para la sección de la imagen */
 .img-constelaciones { background-color: #f0f8ff; }
 .img-bioenergetica { background-color: #fffacd; }
 .img-reiki { background-color: #f0f0f0; }
@@ -327,7 +320,8 @@ h1 {
 
 /* ----- Pie de página ----- */
 .pie {
-    background-image: url("images.jpeg");
+    /* Asegúrate de tener la imagen 'images.jpeg' */
+    background-image: url("images.jpeg"); 
     color: white;
     text-align: center;
     padding: 30px;
@@ -360,15 +354,251 @@ h1 {
 }
 
 .footer-bottom-content {
-    /* Color de fondo oscuro, similar al ejemplo */
     background-color: #364954; 
     padding: 30px 20px;
-    text-align: center; /* Centra el texto */
+    text-align: center; 
 }
 
 .copyright-text {
     font-size: 0.9em;
-    /* Color de texto azul/claro, similar al ejemplo */
     color: #8db5c4; 
-    margin: 0; /* Remueve el margen por defecto del párrafo */
+    margin: 0; 
+}
+
+/* --- Degradados (Gradientes) --- */
+
+/* 1. Degradado para la sección de CTA final */
+.izquierda h2:nth-of-type(2) { /* "Es el momento de trabajar en ti" */
+    /* Fondo con un degradado sutil de azul a gris claro */
+    background-image: linear-gradient(to right, #eaf4f7, #ffffff);
+    padding: 15px;
+    border-radius: 5px;
+    color: #4a545c; /* Asegura un buen contraste */
+    border-left: 5px solid #6da2bf;
+}
+
+/* 2. Degradado en el botón del boletín para un efecto 3D */
+.pie .boletin button {
+    /* ... código existente ... */
+    background: linear-gradient(to bottom, #ff9933, #cc6600); /* Degradado de claro a oscuro */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Agregar sombra para efecto 3D */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Agregar transición para el hover */
+    transition: all 0.3s ease;
+}
+
+.pie .boletin button:hover {
+    background: linear-gradient(to bottom, #cc6600, #994c00); /* Invertir el degradado en hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Clipping y Masking (Clip-path) --- */
+
+/* 1. Clipping en la imagen principal para darle una forma diagonal o cortada */
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Cortar la parte inferior de la imagen principal con un ligero ángulo */
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+/* 2. Clipping en las tarjetas modulares (Constelaciones, Reiki, etc.) */
+.module .image-box {
+    width: 100px; 
+    height: 100px;
+    flex-shrink: 0; 
+    border-radius: 8px;
+    overflow: hidden;
+    /* Aplicar una forma de hexágono al contenedor de la imagen */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: clip-path 0.5s ease;
+}
+
+.module:hover .image-box {
+    /* Al pasar el mouse, cambiar la forma ligeramente (ejemplo de interacción con clip-path) */
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/* --- Transiciones (8 Atributos) --- */
+
+/* Transición 1 y 2 (ya existen en tu código, pero se asegura el 'ease') */
+.arrow-button {
+    /* ... código existente ... */
+    transition: background-color 0.3s ease; /* Transición 1: background-color */
+}
+
+.menu ul li a {
+    /* ... código existente ... */
+    transition: color 0.3s, border-bottom 0.2s ease; /* Transición 2: border-bottom (y color) */
+}
+
+/* Transición 3 y 5: Efecto en tarjetas */
+.info-card {
+    transition: box-shadow 0.6s ease; /* Transición 5: box-shadow */
+}
+.info-card:hover {
+    box-shadow: 0 10px 20px rgba(229, 115, 115, 0.4); /* Resaltar con la sombra */
+}
+
+/* Transición 3: Transformación en las tarjetas modulares */
+.module {
+    /* ... código existente ... */
+    transition: transform 0.4s ease-out; /* Transición 3: transform */
+}
+.module:hover {
+    transform: translateY(-5px) scale(1.02); /* Se eleva y crece ligeramente */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+}
+
+/* Transición 4: Opacidad en el sidebar */
+.widget {
+    /* ... código existente ... */
+    transition: opacity 0.5s linear; /* Transición 4: opacity */
+}
+.derecha:hover .widget {
+    opacity: 0.8;
+}
+.derecha .widget:hover {
+    opacity: 1; /* El widget sobre el que pasamos el mouse se ve nítido */
+}
+
+
+/* Transición 6: Color de texto */
+.module-text {
+    /* ... código existente ... */
+    transition: color 0.3s ease-in; /* Transición 6: color */
+}
+.module:hover .module-text {
+    color: #cc4d4d; /* Cambia de color al hacer hover en el módulo */
+}
+
+/* Transición 7: Padding en el botón */
+.boton {
+    /* ... código existente ... */
+    transition: background-color 0.3s, padding 0.3s ease; /* Transición 7: padding */
+}
+.boton:hover {
+    padding: 8px 25px; /* Aumenta el padding horizontal */
+}
+
+/* Transición 8: Filtro en la imagen principal (para demostrar filter) */
+.main-image {
+    /* ... código existente ... */
+    transition: filter 1s; /* Transición 8: filter */
+}
+.image-container:hover .main-image {
+    filter: brightness(1.1); /* Ligeramente más brillante en hover */
+}
+
+/* --- Animaciones (10 Atributos) --- */
+
+/* 1. Keyframes para la entrada suave (Opacity) */
+@keyframes entradaSuave {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+body {
+    /* ... código existente ... */
+    animation: entradaSuave 1s ease-out 0.5s backwards; /* Animación 1 */
+}
+
+/* 2. Keyframes para borde titilante (Border-color) */
+@keyframes bordeTitilante {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #ff9933; }
+}
+.widget h3 {
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    animation: bordeTitilante 3s infinite alternate; /* Animación 2 */
+}
+
+/* 3. Keyframes para flotar (Transform Y) */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+.logo h1 {
+    display: inline-block;
+    animation: flotar 4s ease-in-out infinite; /* Animación 3 */
+}
+
+/* 4. Keyframes para rotar circular (Transform Rotate) */
+@keyframes rotarCircular {
+    to { transform: rotate(360deg); }
+}
+.image-grid {
+    /* ... código existente (ya tiene un rotate(10deg)) ... */
+    animation: rotarCircular 60s linear infinite; /* Animación 4 */
+}
+
+/* 5. Keyframes para latido (Transform Scale) */
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.more-info-button {
+    /* ... código existente ... */
+    animation: latido 2s ease-in-out infinite; /* Animación 5 */
+}
+
+/* 6. Keyframes para deslizar izquierda (Transform X) */
+@keyframes deslizarIzquierda {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.subtitle {
+    /* ... código existente ... */
+    animation: deslizarIzquierda 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación 6 */
+}
+
+/* 7. Keyframes para sombra pulsante (Box-shadow) */
+@keyframes sombraPulsante {
+    0% { box-shadow: 0 0 5px #cc6600; }
+    50% { box-shadow: 0 0 15px #ff9933; }
+    100% { box-shadow: 0 0 5px #cc6600; }
+}
+.pie .boletin button {
+    /* ... código existente ... */
+    animation: sombraPulsante 2s infinite ease-in-out; /* Animación 7 */
+}
+
+/* 8. Keyframes para cambio de color de fondo (Background-color) */
+@keyframes cambioDeFondo {
+    0% { background-color: #ffe0b2; }
+    33% { background-color: #e57373; }
+    66% { background-color: #6da2bf; }
+    100% { background-color: #ffe0b2; }
+}
+.img-1 { 
+    /* ... código existente ... */
+    animation: cambioDeFondo 10s infinite alternate; /* Animación 8 */
+}
+
+/* 9. Keyframes para ancho llamativo (Width) */
+@keyframes anchoLlamativo {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+.footer-top-image-strip {
+    height: 5px;
+    background-color: #cc6600;
+    margin-bottom: 5px;
+    animation: anchoLlamativo 1.5s ease-out; /* Animación 9 */
+}
+
+/* 10. Keyframes para texto parpadeante (Color) */
+@keyframes textoParpadeante {
+    0%, 100% { color: white; }
+    50% { color: #ff9933; }
+}
+.copy {
+    /* ... código existente ... */
+    animation: textoParpadeante 5s infinite alternate; /* Animación 10 */
 }

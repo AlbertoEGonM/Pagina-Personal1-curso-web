@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lenguaje="javascript">
+        function mayor(){
+            let numero = prompt("Ingrese un numero");
+            numero = Number(numero);
+            if (numero > 20){
+                alert ("El numero es mayor a 20")
+            }else{
+                alert("El numero No es mayor a 20")
+            }
+        }
+
+        function modulo(){
+            let num1 = prompt("Ingrese el primer numero");
+            let num2 = prompt("Ingrese el segundo numero");
+            let resultado = Number(num1) % Number(num2);
+            alert(`El modulo (residuo) de ${num1} % ${num2} es ${resultado}`)
+        }
+
+        function potencia(){
+            let num = prompt("Ingresa un numero");
+            let potencia = prompt("Ingresa la potencia que deseas");
+            let res = Math.pow(num,potencia);
+            alert(`el numero ${num} elevado a su ${potencia} es ${res}`)
+        }
+
+        function factorial(){
+            let res=1;
+            let num = prompt("De que numero quieres el factorial?");
+            for (let i = 1;i<=num;i++){
+                res *= i;
+            }
+            alert(`El resultado de el factorial de ${num} es ${res}`)
+        }
+
+        function frecuencia() {
+    
+        const numeroFrecuenciaStr = prompt("Ingresa un número para contar la frecuencia de sus dígitos (0-9):");
+
+            if (numeroFrecuenciaStr === null || numeroFrecuenciaStr.trim() === "") {
+                alert("Conteo de dígitos omitido.");
+        return;
+            }
+
+    
+        const numeroLimpio = numeroFrecuenciaStr.replace(/[^0-9]/g, ''); 
+
+            if (numeroLimpio === "") {
+                alert(`Conteo de dígitos: "${numeroFrecuenciaStr}" no contiene dígitos válidos.`);
+            return;
+        }
+
+        const frecuencia = {}; 
+        let resultadoFrecuencia = "";
+
+            for (let i = 0; i <= 9; i++) {
+                frecuencia[i] = 0;
+            }
+
+            for (let i = 0; i < numeroLimpio.length; i++) {
+                const digito = numeroLimpio[i];
+                frecuencia[digito]++;
+            }
+
+            for (let i = 0; i <= 9; i++) {
+                if (frecuencia[i] > 0) { 
+                if (resultadoFrecuencia !== "") {
+                    resultadoFrecuencia += ", ";
+                }
+            resultadoFrecuencia += `${i}-${frecuencia[i]}`;
+                }
+            }   
+
+        alert(`El número: ${numeroFrecuenciaStr} tiene: ${resultadoFrecuencia}`);
+        }
+
+        function Capicúa() {
+            let str = prompt("Ingresa una palabra o número para verificar si es capicúa:");
+            if (str === null) {
+                alert("Verificación de capicúa omitida.");
+                return;
+            }
+            const limpio = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            const invertido = limpio.split('').reverse().join('');
+            if (limpio === invertido) {
+                alert(`"${str}" es un capicúa.`);
+            } else {
+                alert(`"${str}" no es un capicúa.`);
+            }
+        }
+
+        function Palindromo() {
+            let str = prompt("Ingresa una palabra o frase para verificar si es palíndromo:");
+            if (str === null) {
+                alert("Verificación de palíndromo omitida.");
+                return;
+            }
+            const limpio = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            const invertido = limpio.split('').reverse().join('');
+            if (limpio === invertido) {
+                alert(`"${str}" es un palíndromo.`);
+            } else {
+                alert(`"${str}" no es un palíndromo.`);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Practica de Java Script</h1>
+
+    <button onclick="potencia()">Calcular potencia</button><br><br>
+
+    <button onclick="factorial()">Calcular factorial</button><br><br>
+
+    <button onclick="modulo()">Calcular modulo</button><br><br>
+
+    <button onclick="mayor()">Calcular Mayor</button><br><br>
+
+    <button onclick="frecuencia()">Calcular Frecuencia de numeros</button><br><br>
+
+    <button onclick="Capicúa()">Calcular si es Capicúa</button><br><br>
+
+    <button onclick="Palindromo()">Determinar palindromo</button><br><br>
+</body>
+</html>
